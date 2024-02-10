@@ -1,0 +1,54 @@
+import java.io.*;
+
+public class SortArr {
+    public static void main(String args[]) {
+        try {
+            int a[];
+            String s;
+            int i;
+
+            System.out.println("Enter size of array: ");
+            DataInputStream dis = new DataInputStream(System.in);
+            s = dis.readLine();
+            int n = Integer.parseInt(s);
+            a = new int[n];
+
+            System.out.println("Enter array elements: ");
+            for (i = 0; i < n; i++) {
+                s = dis.readLine();
+                a[i] = Integer.parseInt(s);
+            }
+
+            System.out.println("Array elements before sorting: ");
+            for (i = 0; i < n; i++) {
+                System.out.println(a[i]);
+            }
+
+            // Call the bubbleSort method to sort the array
+            bubbleSort(a);
+
+            System.out.println("Array elements after sorting in ascending order:");
+            for (i = 0; i < n; i++) {
+                System.out.println(a[i]);
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    // Bubble Sort method
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
