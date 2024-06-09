@@ -26,7 +26,7 @@ int c=Integer.parseInt(s);
 
 int min=Math.min(Math.min(a,b),c);
 //int min=(a<b) ? ((a<c)?a:c) : ((b<c)?b:c);
-System.out.println("Min number is: "+min);
+System.out.println("Minimum number is: "+min);
 
 }
 catch(Exception e)
